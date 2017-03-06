@@ -1,0 +1,714 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/toru/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/toru/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/toru/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/toru/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="前段时间遇到产品一个需求，在移动端上合成生成二维码，并且合成背景图和二维码给用户保存;当时我在想，链接拼接生成二维码这个没什么，图片合成在移动端来做，结果后端的小伙伴说他们有现成的方案，他们合成，最后也就让后端做了；
+####最后想想，前端其实做起来也很方便啊，搞起！
+
+兼容性，浏览器支持canvas，似乎这是最核心最低的门槛，自己确认了一下兼容性形式一片大好
+问题分析合成，也就是将一个背景图，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Schnee Dust Company">
+<meta property="og:url" content="https://tamamoran.github.io/2017/03/06/2017-03-06-当前端遇到图片合成，你会想到谁？/index.html">
+<meta property="og:site_name" content="Schnee Dust Company">
+<meta property="og:description" content="前段时间遇到产品一个需求，在移动端上合成生成二维码，并且合成背景图和二维码给用户保存;当时我在想，链接拼接生成二维码这个没什么，图片合成在移动端来做，结果后端的小伙伴说他们有现成的方案，他们合成，最后也就让后端做了；
+####最后想想，前端其实做起来也很方便啊，搞起！
+
+兼容性，浏览器支持canvas，似乎这是最核心最低的门槛，自己确认了一下兼容性形式一片大好
+问题分析合成，也就是将一个背景图，">
+<meta property="og:image" content="http://olkcsv4ba.bkt.clouddn.com/HTML-5-Canvas-Poster-21.jpg">
+<meta property="og:image" content="http://olkcsv4ba.bkt.clouddn.com/canvas.png">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1746966-9f07f149e8adcbf5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://olkcsv4ba.bkt.clouddn.com/hit%20face.jpg">
+<meta property="og:image" content="http://olkcsv4ba.bkt.clouddn.com/%E7%BB%9D%E6%9C%9B.jpg">
+<meta property="og:updated_time" content="2017-03-06T14:42:55.696Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Schnee Dust Company">
+<meta name="twitter:description" content="前段时间遇到产品一个需求，在移动端上合成生成二维码，并且合成背景图和二维码给用户保存;当时我在想，链接拼接生成二维码这个没什么，图片合成在移动端来做，结果后端的小伙伴说他们有现成的方案，他们合成，最后也就让后端做了；
+####最后想想，前端其实做起来也很方便啊，搞起！
+
+兼容性，浏览器支持canvas，似乎这是最核心最低的门槛，自己确认了一下兼容性形式一片大好
+问题分析合成，也就是将一个背景图，">
+<meta name="twitter:image" content="http://olkcsv4ba.bkt.clouddn.com/HTML-5-Canvas-Poster-21.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/toru/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://tamamoran.github.io/2017/03/06/2017-03-06-当前端遇到图片合成，你会想到谁？/"/>
+
+
+
+
+
+  <title>  | Schnee Dust Company </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/toru/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Schnee Dust Company</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">日常拖更</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/toru/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/toru/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://tamamoran.github.io/toru/2017/03/06/2017-03-06-当前端遇到图片合成，你会想到谁？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Toru@浮不起来">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olkcsv4ba.bkt.clouddn.com/author.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Schnee Dust Company">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-06T22:42:05+08:00">
+                2017-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://olkcsv4ba.bkt.clouddn.com/HTML-5-Canvas-Poster-21.jpg"></p>
+<h4 id="前段时间遇到产品一个需求，在移动端上合成生成二维码，并且合成背景图和二维码给用户保存"><a href="#前段时间遇到产品一个需求，在移动端上合成生成二维码，并且合成背景图和二维码给用户保存" class="headerlink" title="前段时间遇到产品一个需求，在移动端上合成生成二维码，并且合成背景图和二维码给用户保存;"></a>前段时间遇到产品一个需求，在移动端上合成生成二维码，并且合成背景图和二维码给用户保存;</h4><p>当时我在想，链接拼接生成二维码这个没什么，图片合成在移动端来做，结果后端的小伙伴说他们有现成的方案，他们合成，最后也就让后端做了；</p>
+<p>####最后想想，前端其实做起来也很方便啊，搞起！</p>
+<ul>
+<li><h4 id="兼容性，浏览器支持canvas，似乎这是最核心最低的门槛，自己确认了一下兼容性"><a href="#兼容性，浏览器支持canvas，似乎这是最核心最低的门槛，自己确认了一下兼容性" class="headerlink" title="兼容性，浏览器支持canvas，似乎这是最核心最低的门槛，自己确认了一下兼容性"></a>兼容性，浏览器支持canvas，似乎这是最核心最低的门槛，自己确认了一下兼容性</h4><img src="http://olkcsv4ba.bkt.clouddn.com/canvas.png"><h4 id="形式一片大好"><a href="#形式一片大好" class="headerlink" title="形式一片大好"></a>形式一片大好</h4></li>
+<li><h4 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h4>合成，也就是将一个背景图，一个二维码图放在一个容器内，那么canvas不是有一个drawImage可以把图片给画进去么？最后再照葫芦画瓢画二维码，最后toDataURL把base64编码的图片信息导出给img标签不就OK啦！</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">// bgSize，qrSize为对应图的尺寸</div><div class="line">// bgUrl，qrUrl为对应图的地址</div><div class="line">// qrX，qrY为偏移值，target为你展示的img标签的class或者id</div><div class="line">const canvas = document.createElement(&quot;canvas&quot;);</div><div class="line">if (canvas.getContext) &#123;</div><div class="line">  canvas.width = bgSize; </div><div class="line">  canvas.height = bgSize;</div><div class="line">  let ctx = canvas.getContext(&apos;2d&apos;);</div><div class="line">  ctx.fillRect(0 ,0, bgSize, bgSize);</div><div class="line">  ctx.fillStyle=&apos;transparent&apos;;</div><div class="line">  ctx.fill();</div><div class="line">  let bgImg = new Image();</div><div class="line">  // bgImg.crossOrigin = &quot;anonymous&quot;;</div><div class="line">  bgImg.src = bgUrl;</div><div class="line">  bgImg.addEventListener(&quot;load&quot;, ()=&gt; &#123;</div><div class="line">    ctx.drawImage(bgImg, 0, 0, bgSize, bgSize);</div><div class="line">    let qrImg = new Image();</div><div class="line">    // qrImg.crossOrigin = &quot;anonymous&quot;;</div><div class="line">    qrImg.src = qrUrl;   </div><div class="line">    qrImg.addEventListener(&quot;load&quot;, ()=&gt; &#123;</div><div class="line">      ctx.drawImage(qrImg, qrX, qrY, qrSize, qrSize);</div><div class="line">      document.querySelector(target).src = canvas.toDataURL(&quot;image/png&quot;);</div><div class="line">    &#125;);</div><div class="line">  &#125;);	</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>结果<img src="http://upload-images.jianshu.io/upload_images/1746966-9f07f149e8adcbf5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="报错了"></p>
+<p><img src="http://olkcsv4ba.bkt.clouddn.com/hit%20face.jpg"></p>
+<h4 id="这是为什么呢？去搜索了很多，很多人说什么canvas不能使用跨域图片，问题都集中在跨域上；"><a href="#这是为什么呢？去搜索了很多，很多人说什么canvas不能使用跨域图片，问题都集中在跨域上；" class="headerlink" title="这是为什么呢？去搜索了很多，很多人说什么canvas不能使用跨域图片，问题都集中在跨域上；"></a>这是为什么呢？去搜索了很多，很多人说什么canvas不能使用跨域图片，问题都集中在跨域上；</h4><h4 id="跨域说对了一半，并不是canvas不能使用跨域图片，而是在用没有跨域权限图片导出信息时会报错，Canvas确实是为了安全性考虑，当绘制了外部图片后它会变成只可写不可读的状态，getImageData、toDataURL之类的试图读取数据的方法全都无法使用；"><a href="#跨域说对了一半，并不是canvas不能使用跨域图片，而是在用没有跨域权限图片导出信息时会报错，Canvas确实是为了安全性考虑，当绘制了外部图片后它会变成只可写不可读的状态，getImageData、toDataURL之类的试图读取数据的方法全都无法使用；" class="headerlink" title="跨域说对了一半，并不是canvas不能使用跨域图片，而是在用没有跨域权限图片导出信息时会报错，Canvas确实是为了安全性考虑，当绘制了外部图片后它会变成只可写不可读的状态，getImageData、toDataURL之类的试图读取数据的方法全都无法使用；"></a>跨域说对了一半，并不是canvas不能使用跨域图片，而是在用没有跨域权限图片导出信息时会报错，Canvas确实是为了安全性考虑，当绘制了外部图片后它会变成只可写不可读的状态，getImageData、toDataURL之类的试图读取数据的方法全都无法使用；</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">img.crossOrigin = &quot;anonymous&quot;;</div></pre></td></tr></table></figure>
+<p>之后呢，其实也就是让前端开启了图片的跨域使用，为图片服务添加CROS（跨域）支持，具体方法是在图片的返回的header中添加Access-Control-Allow-Origin:*，同时在请求图片时，为image元素设置crossOrigin=”” 属性设置为空字符串或者 “anonymous”，这样就可以跨域导出图片信息，也就是画图了;<br>这边MDN上就介绍了这个<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/CORS_enabled_image" target="_blank" rel="external">启用了 CORS 的图片</a>;</p>
+<h4 id="最后一点呢，就是，如果这些跨域图片都是自己能够操作服务器开启CORS的当然是最好的，万一没有这个权限，或者操纵的图片对面直接设置了防盗链，前端在浏览器里面可就真的没办法了·····"><a href="#最后一点呢，就是，如果这些跨域图片都是自己能够操作服务器开启CORS的当然是最好的，万一没有这个权限，或者操纵的图片对面直接设置了防盗链，前端在浏览器里面可就真的没办法了·····" class="headerlink" title="最后一点呢，就是，如果这些跨域图片都是自己能够操作服务器开启CORS的当然是最好的，万一没有这个权限，或者操纵的图片对面直接设置了防盗链，前端在浏览器里面可就真的没办法了·····"></a>最后一点呢，就是，如果这些跨域图片都是自己能够操作服务器开启CORS的当然是最好的，万一没有这个权限，或者操纵的图片对面直接设置了防盗链，前端在浏览器里面可就真的没办法了·····</h4><p><img src="http://olkcsv4ba.bkt.clouddn.com/%E7%BB%9D%E6%9C%9B.jpg"></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://olkcsv4ba.bkt.clouddn.com/qrcode.jpg" alt="Toru@浮不起来 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>实验性质</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://olkcsv4ba.bkt.clouddn.com/wxpay.jpg" alt="Toru@浮不起来 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://olkcsv4ba.bkt.clouddn.com/alipay.jpg" alt="Toru@浮不起来 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/toru/2017/03/05/2017-02-18-WeChat&QrCode/" rel="next" title="WeChat & QrCode">
+                <i class="fa fa-chevron-left"></i> WeChat & QrCode
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://olkcsv4ba.bkt.clouddn.com/author.png"
+               alt="Toru@浮不起来" />
+          <p class="site-author-name" itemprop="name">Toru@浮不起来</p>
+           
+              <p class="site-description motion-element" itemprop="description">今天的风儿有点喧嚣</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/toru/archives">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前段时间遇到产品一个需求，在移动端上合成生成二维码，并且合成背景图和二维码给用户保存"><span class="nav-number">1.</span> <span class="nav-text">前段时间遇到产品一个需求，在移动端上合成生成二维码，并且合成背景图和二维码给用户保存;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#兼容性，浏览器支持canvas，似乎这是最核心最低的门槛，自己确认了一下兼容性"><span class="nav-number">2.</span> <span class="nav-text">兼容性，浏览器支持canvas，似乎这是最核心最低的门槛，自己确认了一下兼容性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#形式一片大好"><span class="nav-number">3.</span> <span class="nav-text">形式一片大好</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题分析"><span class="nav-number">4.</span> <span class="nav-text">问题分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#这是为什么呢？去搜索了很多，很多人说什么canvas不能使用跨域图片，问题都集中在跨域上；"><span class="nav-number">5.</span> <span class="nav-text">这是为什么呢？去搜索了很多，很多人说什么canvas不能使用跨域图片，问题都集中在跨域上；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域说对了一半，并不是canvas不能使用跨域图片，而是在用没有跨域权限图片导出信息时会报错，Canvas确实是为了安全性考虑，当绘制了外部图片后它会变成只可写不可读的状态，getImageData、toDataURL之类的试图读取数据的方法全都无法使用；"><span class="nav-number">6.</span> <span class="nav-text">跨域说对了一半，并不是canvas不能使用跨域图片，而是在用没有跨域权限图片导出信息时会报错，Canvas确实是为了安全性考虑，当绘制了外部图片后它会变成只可写不可读的状态，getImageData、toDataURL之类的试图读取数据的方法全都无法使用；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最后一点呢，就是，如果这些跨域图片都是自己能够操作服务器开启CORS的当然是最好的，万一没有这个权限，或者操纵的图片对面直接设置了防盗链，前端在浏览器里面可就真的没办法了·····"><span class="nav-number">7.</span> <span class="nav-text">最后一点呢，就是，如果这些跨域图片都是自己能够操作服务器开启CORS的当然是最好的，万一没有这个权限，或者操纵的图片对面直接设置了防盗链，前端在浏览器里面可就真的没办法了·····</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Toru@浮不起来</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/toru/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/toru/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/toru/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/toru/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/toru/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/toru/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/toru/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/toru/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/toru/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/toru/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/toru/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/toru/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/toru/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
