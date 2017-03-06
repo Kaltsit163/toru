@@ -91,13 +91,13 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS Can Hold The Swicth">
 <meta property="og:url" content="https://tamamoran.github.io/2017/03/05/2017-02-13-ios-switch/index.html">
-<meta property="og:site_name" content="Schnee Dust Company">
+<meta property="og:site_name" content="生徒会役員共">
 <meta property="og:description" content="二维码">
 <meta property="og:image" content="http://olkc2dwjv.bkt.clouddn.com/ios-swtich.jpg">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1746966-d74767b650eb376f.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1746966-5412d3253c2a4a98.gif?imageMogr2/auto-orient/strip">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1746966-fbb710313a8f5dbf.gif?imageMogr2/auto-orient/strip">
-<meta property="og:updated_time" content="2017-03-05T13:21:25.971Z">
+<meta property="og:updated_time" content="2017-03-06T14:49:30.371Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS Can Hold The Swicth">
 <meta name="twitter:description" content="二维码">
@@ -135,7 +135,7 @@
 
 
 
-  <title> CSS Can Hold The Swicth | Schnee Dust Company </title>
+  <title> CSS Can Hold The Swicth | 生徒会役員共 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -171,7 +171,7 @@
     <div class="custom-logo-site-title">
       <a href="/toru/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Schnee Dust Company</span>
+        <span class="site-title">生徒会役員共</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -253,7 +253,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Schnee Dust Company">
+      <meta itemprop="name" content="生徒会役員共">
     </span>
 
     
@@ -343,7 +343,8 @@
 
       
         <p><img src="http://olkc2dwjv.bkt.clouddn.com/ios-swtich.jpg" width="100%"></p>
-<h3 id="Choose-and-Switch"><a href="#Choose-and-Switch" class="headerlink" title="Choose and Switch"></a>Choose and Switch</h3><p>   其实在PC上，checkbox和radio就可以做到了，如果需要UI在不同浏览器中保持一致，那么也可以使用JS监听click事件，切换class显示不同的icon或者激活样式,<br>   但是在移动端上,有时候微小的偏差会被放大很多，万一遇到素材icon大小不一，在这种切换时候特别特别扎心;<br>   其实这种简单的勾选效果，不用JS可以做到的;<br><img src="http://upload-images.jianshu.io/upload_images/1746966-d74767b650eb376f.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="100%"><br>这里是手机淘宝App的效果就是上面这种，后来项目中我用iconfont + label + input 搞定了，这里样式很简单，但是原理是一样的，来看看代码；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;!-- more --&gt;</div><div class="line">&lt;ul class=&apos;item-list&apos;&gt;</div><div class="line">  &lt;li class=&apos;item&apos;&gt;</div><div class="line">    &lt;div class=&apos;select&apos;&gt;</div><div class="line">      &lt;input type=&apos;checkbox&apos; id=&apos;foo1&apos;/ class=&apos;ipt&apos;&gt;</div><div class="line">      &lt;label for=&apos;foo1&apos; class=&apos;lab&apos;&gt;&lt;/label&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div class=&apos;des&apos;&gt;</div><div class="line">      &lt;h4&gt;标题&lt;/h4&gt;</div><div class="line">      &lt;p&gt;内容介绍&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/li&gt;</div><div class="line">  &lt;li class=&apos;item&apos;&gt;</div><div class="line">    &lt;div class=&apos;select&apos;&gt;</div><div class="line">      &lt;input type=&apos;checkbox&apos; id=&apos;foo2&apos;/ class=&apos;ipt&apos;&gt;</div><div class="line">      &lt;label for=&apos;foo2&apos; class=&apos;lab&apos;&gt;&lt;/label&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div class=&apos;des&apos;&gt;</div><div class="line">      &lt;h4&gt;标题&lt;/h4&gt;</div><div class="line">      &lt;p&gt;内容介绍&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="Choose-and-Switch"><a href="#Choose-and-Switch" class="headerlink" title="Choose and Switch"></a>Choose and Switch</h3><p>   其实在PC上，checkbox和radio就可以做到了，如果需要UI在不同浏览器中保持一致，那么也可以使用JS监听click事件，切换class显示不同的icon或者激活样式,<br>   但是在移动端上,有时候微小的偏差会被放大很多，万一遇到素材icon大小不一，在这种切换时候特别特别扎心;<br>   其实这种简单的勾选效果，不用JS可以做到的;<br><img src="http://upload-images.jianshu.io/upload_images/1746966-d74767b650eb376f.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="100%"><br>这里是手机淘宝App的效果就是上面这种，后来项目中我用iconfont + label + input 搞定了，这里样式很简单，但是原理是一样的，来看看代码；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;ul class=&apos;item-list&apos;&gt;</div><div class="line">  &lt;li class=&apos;item&apos;&gt;</div><div class="line">    &lt;div class=&apos;select&apos;&gt;</div><div class="line">      &lt;input type=&apos;checkbox&apos; id=&apos;foo1&apos;/ class=&apos;ipt&apos;&gt;</div><div class="line">      &lt;label for=&apos;foo1&apos; class=&apos;lab&apos;&gt;&lt;/label&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div class=&apos;des&apos;&gt;</div><div class="line">      &lt;h4&gt;标题&lt;/h4&gt;</div><div class="line">      &lt;p&gt;内容介绍&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/li&gt;</div><div class="line">  &lt;li class=&apos;item&apos;&gt;</div><div class="line">    &lt;div class=&apos;select&apos;&gt;</div><div class="line">      &lt;input type=&apos;checkbox&apos; id=&apos;foo2&apos;/ class=&apos;ipt&apos;&gt;</div><div class="line">      &lt;label for=&apos;foo2&apos; class=&apos;lab&apos;&gt;&lt;/label&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;div class=&apos;des&apos;&gt;</div><div class="line">      &lt;h4&gt;标题&lt;/h4&gt;</div><div class="line">      &lt;p&gt;内容介绍&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p><img src="http://upload-images.jianshu.io/upload_images/1746966-5412d3253c2a4a98.gif?imageMogr2/auto-orient/strip" width="100%"><br>  CSS中就是隐藏<code>input</code>，利用<code>label</code>做样式；本质仍旧是利用<code>input type=&#39;checkbox&#39;</code>然后这个<code>input：active</code>之后，label怎么变样式的问题;在线效果<a href="http://jsbin.com/lefaga/23/edit?html,css,output" target="_blank" rel="external">JSBIN</a>；<br>这个是多选，单选代码比这个简单，直接上预览，要不然后面的主角就不能出场了<a href="http://jsbin.com/lefaga/edit?html,css,output" target="_blank" rel="external">JSBIN</a></p>
 <h3 id="好了，主角登场了，纯CSS模拟iOS中Switch按钮效果："><a href="#好了，主角登场了，纯CSS模拟iOS中Switch按钮效果：" class="headerlink" title="好了，主角登场了，纯CSS模拟iOS中Switch按钮效果："></a>好了，主角登场了，纯CSS模拟iOS中Switch按钮效果：</h3><ul>
 <li>首先是我思考这个问题的思路，既然抛弃JS也能做到，说明他们的着力点都是一样的，Switch无非是两种状态的切换，中间增加过渡时间，也就有一个切换的效果，那么必然有两种状态和分别两套样式；</li>
