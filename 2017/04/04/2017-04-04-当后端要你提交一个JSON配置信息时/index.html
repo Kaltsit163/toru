@@ -87,21 +87,21 @@
 
 
 
-<meta name="description" content="JSON">
+<meta name="description" content="有一天，一个复杂搜索配置信息，需要前端POST给后端，于是他天真的把JS对象给POST过去了，并且还加了一个contentType: “application/json;charset=utf-8”来表明我是给你JSON的啊！！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="当后端要你提交一个JSON配置信息时">
 <meta property="og:url" content="https://tamamoran.github.io/2017/04/04/2017-04-04-当后端要你提交一个JSON配置信息时/index.html">
 <meta property="og:site_name" content="生徒会役員共">
-<meta property="og:description" content="JSON">
+<meta property="og:description" content="有一天，一个复杂搜索配置信息，需要前端POST给后端，于是他天真的把JS对象给POST过去了，并且还加了一个contentType: “application/json;charset=utf-8”来表明我是给你JSON的啊！！">
 <meta property="og:image" content="http://olkcsv4ba.bkt.clouddn.com/JSON-P.jpg">
 <meta property="og:image" content="http://olkcsv4ba.bkt.clouddn.com/JSON-P.jpg">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1746966-3f39a426666ccd63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1746966-6794e2b3073c5940.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://lh3.ggpht.com/_N9kpbq3FL74/StWl5SoIMmI/AAAAAAAAClw/QIFX4XHq4_Y/w1200-h630-p-k-no-nu/jsonjqueryajax.png">
-<meta property="og:updated_time" content="2017-04-04T12:00:43.300Z">
+<meta property="og:updated_time" content="2017-04-04T12:06:12.569Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="当后端要你提交一个JSON配置信息时">
-<meta name="twitter:description" content="JSON">
+<meta name="twitter:description" content="有一天，一个复杂搜索配置信息，需要前端POST给后端，于是他天真的把JS对象给POST过去了，并且还加了一个contentType: “application/json;charset=utf-8”来表明我是给你JSON的啊！！">
 <meta name="twitter:image" content="http://olkcsv4ba.bkt.clouddn.com/JSON-P.jpg">
 
 
@@ -327,10 +327,6 @@
           
 
           
-              <div class="post-description">
-                  JSON
-              </div>
-          
 
         </div>
       </header>
@@ -343,7 +339,7 @@
       
 
       
-        <p><img src="http://olkcsv4ba.bkt.clouddn.com/JSON-P.jpg" alt=""><br><a id="more"></a><br><img src="http://olkcsv4ba.bkt.clouddn.com/JSON-P.jpg" alt=""></p>
+        <p><img src="http://olkcsv4ba.bkt.clouddn.com/JSON-P.jpg" alt=""><br>有一天，一个复杂搜索配置信息，需要前端POST给后端，于是他天真的把JS对象给POST过去了，并且还加了一个contentType: “application/json;charset=utf-8”来表明我是给你JSON的啊！！<br><a id="more"></a><br><img src="http://olkcsv4ba.bkt.clouddn.com/JSON-P.jpg" alt=""></p>
 <h3 id="JSON-JavaScript-Object-Notation"><a href="#JSON-JavaScript-Object-Notation" class="headerlink" title="JSON ( JavaScript Object Notation )"></a>JSON ( JavaScript Object Notation )</h3><ul>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank" rel="external">JSON</a>是一种格式，基于文本，优于轻量，用于交换数据；</li>
 <li>相比XML这个前辈，JSON更加轻量，XML需要用到很多标签，感受一下就好了<blockquote>
@@ -367,7 +363,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// JS对象</div><div class="line">let foo = &#123;&#125;; </div><div class="line">// JS对象，只不过你可以把这个称之为JSON格式的 JavaScript对象</div><div class="line">let bar = &#123;</div><div class="line">  &quot;name&quot;: &quot;bar&quot;,</div><div class="line">  &quot;price&quot;: 1000,</div><div class="line">  &quot;buyer&quot;: [1, 2, 3]</div><div class="line">&#125;；</div><div class="line">//  这个就是JSON格式的字符串</div><div class="line">let str1 = JSON.stringify(bar);</div><div class="line">let str2 = &apos;&#123;&quot;name&quot;: &quot;bar&quot;, &quot;price&quot;: 1000, &quot;buyer&quot;: [1, 2, 3]&#125;&apos;;</div></pre></td></tr></table></figure>
 </li>
 <li><p>你看不仅能相互转换，嵌套格式和语法都一样，再看看下面一个POST请求，场景是一个复杂的配置信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">const postData = &#123;</div><div class="line">    &quot;attribution&quot;: 1,</div><div class="line">    &quot;category&quot;: 2,</div><div class="line">     &quot;groupid&quot;: 3,</div><div class="line">    &quot;parentid&quot;: 4,</div><div class="line">    &quot;shopid&quot;: 5,</div><div class="line">    &quot;groupname&quot;: &quot;foo&quot;,</div><div class="line">    &quot;config&quot;: &#123;</div><div class="line">      &quot;tagfilter&quot;: [&#123;&quot;id&quot;: 123, &quot;name&quot;: &quot;group-XX&quot;&#125;],</div><div class="line">      &quot;product&quot;: [&#123;&quot;id&quot;: &quot;123123123123123&quot;, &quot;name&quot;: &quot;prod-YY&quot;&#125;]</div><div class="line">    &#125; </div><div class="line">&#125;;</div><div class="line">$.ajax(&#123;</div><div class="line">    url: &apos;/api/xxx/yyy&apos;, //api接口地址 </div><div class="line">    data: postData, //复杂的配置信息</div><div class="line">    contentType: &quot;application/json;charset=utf-8&quot;, // 客户端请求格式</div><div class="line">    type: &apos;POST&apos;, // 数据传输方式</div><div class="line">    dataType: &apos;json&apos;, // 服务端返回数据格式</div><div class="line">&#125;).done((res) =&gt; &#123;</div><div class="line">    if (res.success &amp;&amp; res.data) &#123;</div><div class="line">      console.log(res.data);</div><div class="line">    &#125; else &#123;</div><div class="line">      layer.msg(res.msg);</div><div class="line">    &#125;</div><div class="line">&#125;).fail(() =&gt; &#123;</div><div class="line">    layer.msg(&apos;网络开小差~请稍后再试！&apos;);</div><div class="line">&#125;).always( ()=&gt; &#123;</div><div class="line">    utils.loadingOff();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">const postData = &#123;</div><div class="line">    &quot;attribution&quot;: 1,</div><div class="line">    &quot;category&quot;: 2,</div><div class="line">    &quot;groupid&quot;: 3,</div><div class="line">    &quot;parentid&quot;: 4,</div><div class="line">    &quot;shopid&quot;: 5,</div><div class="line">    &quot;groupname&quot;: &quot;foo&quot;,</div><div class="line">    &quot;config&quot;: &#123;</div><div class="line">      &quot;tagfilter&quot;: [&#123;&quot;id&quot;: 123, &quot;name&quot;: &quot;group-XX&quot;&#125;],</div><div class="line">      &quot;product&quot;: [&#123;&quot;id&quot;: &quot;123123123123123&quot;, &quot;name&quot;: &quot;prod-YY&quot;&#125;]</div><div class="line">    &#125; </div><div class="line">&#125;;</div><div class="line">$.ajax(&#123;</div><div class="line">    url: &apos;/api/xxx/yyy&apos;, //api接口地址 </div><div class="line">    data: postData, //复杂的配置信息</div><div class="line">    contentType: &quot;application/json;charset=utf-8&quot;, // 客户端请求格式</div><div class="line">    type: &apos;POST&apos;, // 数据传输方式</div><div class="line">    dataType: &apos;json&apos;, // 服务端返回数据格式</div><div class="line">&#125;).done((res) =&gt; &#123;</div><div class="line">    if (res.success &amp;&amp; res.data) &#123;</div><div class="line">      console.log(res.data);</div><div class="line">    &#125; else &#123;</div><div class="line">      layer.msg(res.msg);</div><div class="line">    &#125;</div><div class="line">&#125;).fail(() =&gt; &#123;</div><div class="line">    layer.msg(&apos;网络开小差~请稍后再试！&apos;);</div><div class="line">&#125;).always( ()=&gt; &#123;</div><div class="line">    utils.loadingOff();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 </li>
 <li><p>你看，既然你需要一个JSON，我就给你好了，就如同你给我的JSON一样，我直接把JS的一个对象给POST过去，还异想天开的给加了一个<code>contentType</code>，嗯~后端拿到就是一个JSON，然后Chrome直接默认给我转换成了表单提交过去了···；</p>
 </li>
